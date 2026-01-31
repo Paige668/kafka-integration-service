@@ -20,9 +20,9 @@ hs_err_pid*
 
 # IDEs
 .idea
+.vscode/
 *.iml
 .classpath
 .project
 .settings
 .DS_Store
-
