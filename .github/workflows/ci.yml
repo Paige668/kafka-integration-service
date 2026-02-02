@@ -13,7 +13,7 @@ jobs:
 
     services:
       kafka:
-        image: bitnami/kafka:3.6
+        image: bitnami/kafka:3.6.1
         ports:
           - 9092:9092
         env:
