@@ -7,4 +7,3 @@ import java.util.Optional;
 public interface ProcessedEventRepository extends JpaRepository<ProcessedEvent, Long> {
     Optional<ProcessedEvent> findByEventId(String eventId);
 }
-

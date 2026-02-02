@@ -49,4 +49,3 @@ jobs:
       
     - name: Build and Test Event Processor
       run: mvn -B package --file event-processor/pom.xml
-

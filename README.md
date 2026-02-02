@@ -90,4 +90,3 @@ curl -X POST http://localhost:8080/events \
 ## CI/CD
 *   GitHub Actions workflow located in `.github/workflows/ci.yml`.
 *   Runs `mvn package` for both services on every push.
-
