@@ -37,8 +37,8 @@ public class EventConsumer {
         try {
             JsonNode root = objectMapper.readTree(message);
             
-            // Validation
-            if (!root.has("eventId") || !root.has("type")) {
+            // Validation: the API serializes absent fields as null, so check for null and blank values too
+            if (isMissing(root, "eventId") || isMissing(root, "type")) {
                 throw new IllegalArgumentException("Missing required fields: eventId or type");
             }
 
@@ -68,6 +68,11 @@ public class EventConsumer {
             log.error("Error processing message. Sending to DLQ.", e);
             sendToDlq(message, e.getMessage());
         }
+    }
+
+    private static boolean isMissing(JsonNode root, String field) {
+        JsonNode node = root.get(field);
+        return node == null || node.isNull() || node.asText().isBlank();
     }
 
     private void sendToDlq(String originalMessage, String errorReason) {
