@@ -19,7 +19,7 @@ A minimal, production-ready integration service demonstrating **REST API -> Kafk
 
 ### Prerequisites
 *   Docker & Docker Compose
-*   Java 17+ & Maven
+*   Java 21 & Maven
 
 ### 1. Start Infrastructure
 ```bash
